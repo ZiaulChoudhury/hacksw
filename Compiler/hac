@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo " STEP 1: Compiling Input File"
+python3.5 Lexer.py $1
+mv Hardware.bsv HardwareTestBench.bsv ../
+cd ..
+make hard
+cd Compiler
+echo " STEP 2: Simulating Generated Hardware "
+.././hardware | tee out.txt
+my_array=( `cat ../HardwareTestBench.bsv | grep '#define' | cut -d ' ' -f 3 `)
+javac Main.java
+echo " STEP 3: Rendering Output "
+java Main ${my_array[0]} ${my_array[0]} ${my_array[1]} ${my_array[2]}
+

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 
-#define SIZE 256
+#define SIZE 1024
 int img1[2*SIZE][2*SIZE][3];
 int img2[2*SIZE][2*SIZE][3];
 int img3[2*SIZE][2*SIZE][3];
@@ -9,7 +9,7 @@ int img3[2*SIZE][2*SIZE][3];
 void initialize_imageCPP1()
 {
 	
-    FILE* file = fopen ("input/tom.txt", "r");
+    FILE* file = fopen ("input/Dream.txt", "r");
     int i = 0, j=0,k=0;
     int count = 0;
 

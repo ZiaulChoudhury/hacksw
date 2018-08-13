@@ -1,21 +1,16 @@
-package HardwareTestBench;
-import BRam::*;
-import Hardware::*;
-import TubeHeader::*;
-import FixedPoint::*;
-import datatypes::*;
-import bram::*;
-import pulse::*;
-import Vector::*;
-import Stage::*;
-import FIFO::*;
-
-import "BDPI" function Action initialize_image();
-import "BDPI" function Int#(32) readPixel1(Int#(32) ri, Int#(32) cj, Int#(32) ch);
+package HardwareTestBench; 
+import Hardware:: *; 
+import FixedPoint:: *; 
+import Vector:: *; 
+import "BDPI" function Action initialize_image(); 
+import "BDPI" function Int#(32) readPixel1(Int#(32) ri, Int#(32) cj, Int#(32) ch); 
 import "BDPI" function Int#(32) readPixel2(Int#(32) ri, Int#(32) cj, Int#(32) ch);
 
-#define IMG 256
+
+#define IMG 1024
+#define SEND 1044484
 #define K 1
+
 
 module mkHardwareTestBench();
 
@@ -27,7 +22,7 @@ module mkHardwareTestBench();
 		Reg#(int) c1 <- mkReg(0);
 		Stdin cnnR <- mkHardware;
 		Reg#(int) test <- mkReg(0);
-	
+
 		rule init_rule (init) ;
                 	initialize_image();
                 	init <= False;
@@ -37,7 +32,7 @@ module mkHardwareTestBench();
                    	test <= test + 1;
 			clk <= clk + 1;
       		endrule
-		
+
 
 		rule layerIn(clk>=1);
 			if(cols == IMG - 1) begin
@@ -48,18 +43,18 @@ module mkHardwareTestBench();
                         cols <= cols + 1;
 			Vector#(K, Int#(10)) s1 = newVector;
 			if(rows <= IMG-K) begin
-					
-					for(int i=0; i<K; i = i+1) begin			
+
+					for(int i=0; i<K; i = i+1) begin
 					//Int#(8) pixlR = truncate(((rows + extend(i))*cols + 10)%255);
-					Int#(10) pixlR = truncate(readPixel1((rows + i), cols,0)); 
+					Int#(10) pixlR = truncate(readPixel1((rows + i), cols,0));
 					s1[i] = pixlR;
 					end
 					cnnR.put(pack(s1));
-			end	
+			end
 		endrule
 
          	rule layerOut;  //(clk %20 == 0); // (!(clk > 100 && clk <1000));
-                                        if( c0 < (IMG-4)*(IMG-4)) begin
+                                        if( c0 < SEND) begin
                                         let d <- cnnR.get;
                                                 if( c1 == 0) begin
                                                 UInt#(10) dx = unpack(d);
@@ -70,14 +65,15 @@ module mkHardwareTestBench();
                                         else begin
                                         c0 <= 0;
                                         rows <= 0;
-                                        $display(" full depth retreived @clk %d ", clk);
                                         if(c1 == 0)
                                                         $finish(0);
                                                 else
                                                         c1 <= c1+1;
                                         end
                 endrule
- 
+
 endmodule
 
 endpackage
+
+

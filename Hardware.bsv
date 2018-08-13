@@ -7,8 +7,8 @@ import Vector:: *;
 import FIFO:: *; 
 import FIFOF:: *;
 
-#define RECV  65536
-#define SEND  63505
+#define RECV  1048576
+#define SEND  1044485
 interface Stdin;
 
 	method ActionValue#(Bit#(10)) get;
@@ -20,8 +20,8 @@ endinterface
 module mkHardware(Stdin);
 FIFOF#(Bit#(10)) outQ[8][8]; 
 Reg#(int) clk <- mkReg(0); 
-Reg#(UInt#(20)) recv <- mkReg(0); 
-Reg#(UInt#(20)) send <- mkReg(0);
+Reg#(UInt#(22)) recv <- mkReg(0); 
+Reg#(UInt#(22)) send <- mkReg(0);
 Reg#(Bool) _c <- mkReg(False);
 Reg#(Bool) _clear <- mkReg(False);
 for (int i = 0; i < 8; i = i + 1)
@@ -36,13 +36,13 @@ Component _src <- mkSource(1 , buffer_src , 1);
 
 
 Integer buffer_tile[1]={32};
-Relay r0= Relay{row1:2,row2: 254,col1: 2 , col2: 254,size: 33};
+Relay r0= Relay{row1:1,row2: 1023,col1: 1 , col2: 1023,size: 33};
 Relay relays[1] = {r0};
-Component _tile <- mkRelayBuffer(_src , 0 , 5 , 5 , 1 , buffer_tile , 1 , relays , 256, 1 , 1, 1);
+Component _tile <- mkRelayBuffer(_src , 0 , 3 , 3 , 1 , buffer_tile , 1 , relays , 1024, 1 , 1, 1);
 
 
 Integer buffer_blur[1]={32};
-Component _blur <- mkConvolver(_tile , 0 , 5, 1 , buffer_blur , 1);
+Component _blur <- mkConvolver(_tile , 0 , 3, 1 , buffer_blur , 1);
 
 
 Integer buffer_sharpen[1]={32};
@@ -51,7 +51,7 @@ Integer _inputId_sharpen[2]= {0 , 0 };
 Bool _relay_sharpen[2]= {True,False};
 
 function DataType func_sharpen(Reg#(DataType) in[]);
-                 /*DataType two = 2;
+                 DataType two = 2;
                  DataType val = fxptTruncate(fxptSub(fxptMult(two,in[0]),in[1]));
                  DataType th = fxptTruncate(fxptSub(in[0],in[1]));
                  if ( th < 0) begin                     Bit#(16) data = pack(th);
@@ -61,9 +61,6 @@ function DataType func_sharpen(Reg#(DataType) in[]);
                      th = unpack(res);
                  end                  if(th < 0.01)                                 return in[0];
                   else                                 return val;
-		  */
-				
-		return in[0];
                
 endfunction
 Component _sharpen <- mkPointComponent(func_sharpen,_inputs_sharpen , 2 ,_relay_sharpen , _inputId_sharpen , 1 , buffer_sharpen , 1);
@@ -121,8 +118,8 @@ rule _ClearPipe(send == SEND && _c == False);
 	end
 		_c <= True;
 		_src.clean;
-		_tile.clean;
 		_blur.clean;
+		_tile.clean;
 		_sharpen.clean;
 
 endrule
@@ -162,4 +159,3 @@ endmethod
 
 endmodule
 endpackage
-

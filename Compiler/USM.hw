@@ -1,0 +1,30 @@
+img <= [1024,1024,0]<Image>;
+
+src <= [img,1]<Source>;
+
+tile <= [src,3,3,1,1,1]<Tile>;
+
+vec <= [0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04]<Constant,Vector>;
+
+blur <= [tile,3,vec,1]<Convolution>;
+
+sharpen <= {
+                DataType two = 2;
+                DataType val = expr(two * x[0] - x[1]);
+                DataType th = expr(x[0] - x[1]);
+                if ( th < 0) begin
+                    Bit#(16) data = pack(th);
+                    Bit#(1) one = 1;
+                    data = invert(data);
+                    Bit#(16) res = truncate(data + zeroExtend(one));
+                    th = unpack(res);
+                end
+
+                if(th < 0.01)
+                                return x[0];
+                 else
+                                return val;
+
+
+
+           }[tile,blur,1]<Point>;

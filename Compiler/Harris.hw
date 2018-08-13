@@ -1,0 +1,45 @@
+vec  <= [0.083, 0, -0.083, 0.166, 0, -0.166, 0.083, 0, -0.083]<Constant,Vector>;
+vec2 <= [0.083,0.166,0.083,0,0,0,-0.083,-0.166,-0.083]<Constant,Vector>;
+vec3 <= [1,1,1,1,1,1,1,1,1]<Constant,Vector>;
+
+img   <=  [1024,1024]<Image>;
+
+src1  <=  [img,1]<Source>;
+
+tile  <=  [src1,  3, 3, 1, 1,1]<Tile>;
+
+Ix <=  [tile, 3, vec, 1]<Convolution>;
+
+Iy <=  [tile, 3, vec2, 1]<Convolution>;
+
+Ixx <= {return expr(x[0]*x[0]); }[Ix,1]<Point>;
+
+Iyy <= {return expr(x[0]*x[0]); }[Iy,1]<Point>;
+
+Ixy <= {return expr(x[0]*x[1]); }[Ix,Iy,1]<Point>;
+
+tile2 <= [Ixx, 3, 3, 1, 1,1]<Tile>;
+
+tile3 <= [Iyy, 3, 3, 1, 1,1]<Tile>;
+
+tile4 <= [Ixy, 3, 3, 1, 1,1]<Tile>;
+
+Sxx <= [tile2, 3, vec3, 1]<Convolution>;
+
+Syy <= [tile3, 3, vec3, 1]<Convolution>;
+
+Sxy <= [tile4, 3, vec3, 1]<Convolution>;
+
+harris <= {
+            DataType cons = 0.4;
+            let _Sxx = in[0];
+            let _Syy = in[1];
+            let _Sxy = in[2];
+            DataType trace = expr(_Sxx + _Syy);
+            DataType det = expr(_Sxx*_Syy - _Sxy*_Sxy);
+            DataType val = expr(det - cons*trace*trace);
+            if(val < 500)
+                        return 0;
+            else
+                        return 255;
+           }[Sxx,Syy,Sxy,1]<Point>;

@@ -2,6 +2,8 @@ from DAG import*
 from expression import *
 import re
 import math
+import sys
+
 def hasNumbers(inputString):
     return all(char.isdigit() for char in inputString)
 
@@ -245,7 +247,7 @@ def codeGenerate(DB):
     l2 = "\tmethod Action put(Bit#(" + str(totalOut) + ") datas);\n"
     f.write(l1+l2+"\nendinterface\n\n")
     f.write("(*synthesize *) \nmodule mkHardware(Stdin);\n")
-    initblock = "FIFOF#(Bit#(10)) outQ[8][8]; \nReg#(int) clk <- mkReg(0); \nReg#(UInt#(20)) recv <- mkReg(0); \nReg#(UInt#(20)) send <- mkReg(0);\nReg#(Bool) _c <- mkReg(False);\nReg#(Bool) _clear <- mkReg(False);\nfor (int i = 0; i < 8; i = i + 1)\n\tfor (int j = 0; j < 8; j = j + 1)\n\t\toutQ[i][j] <- mkFIFOF;\nReg#(Bool) init <- mkReg(True);\n"
+    initblock = "FIFOF#(Bit#(10)) outQ[8][8]; \nReg#(int) clk <- mkReg(0); \nReg#(UInt#(22)) recv <- mkReg(0); \nReg#(UInt#(22)) send <- mkReg(0);\nReg#(Bool) _c <- mkReg(False);\nReg#(Bool) _clear <- mkReg(False);\nfor (int i = 0; i < 8; i = i + 1)\n\tfor (int j = 0; j < 8; j = j + 1)\n\t\toutQ[i][j] <- mkFIFOF;\nReg#(Bool) init <- mkReg(True);\n"
     f.write(initblock+"\n")
 
     for nodes in DB.Topoolgy:
@@ -505,5 +507,39 @@ class lex:
         halt(self)
 
 
-DataBase = lex('USM.txt')
-codeGenerate(DataBase)
+def generateTestBench(DB):
+    f = open("HardwareTestBench.bsv", "w")
+    Comp = "package HardwareTestBench; \nimport Hardware:: *; \nimport FixedPoint:: *; \nimport Vector:: *; \n"
+    Comp += "import \"BDPI\" function Action initialize_image(); \nimport \"BDPI\" function Int#(32) readPixel1(Int#(32) ri, Int#(32) cj, Int#(32) ch); \nimport \"BDPI\" function Int#(32) readPixel2(Int#(32) ri, Int#(32) cj, Int#(32) ch);\n\n\n"
+
+    IMG = 0
+    for pipeSrc in DB.Topoolgy[0]:
+            IMG = DB.SymTab[pipeSrc].InImg
+
+    Comp += "#define IMG " + str(IMG) + "\n"
+
+    SEND = 0
+    RATE = 0
+    for nodes in DB.Topoolgy:
+        for node in nodes:
+            Stage = DB.SymTab[node]
+            if (Stage.numOutputs == 0):
+                SEND = Stage.OutImg * Stage.OutImg
+                RATE = Stage.parameters[-1]
+
+    Comp += "#define SEND " + str(SEND) + "\n"
+    Comp += "#define K " + str(RATE) + "\n\n\n"
+
+    with open('testbench.txt', 'r') as myfile:
+        program = myfile.read()
+    Comp += program + "\n"
+    f.write(Comp + "\n")
+    return 0
+
+file = sys.argv[1]
+if file.endswith('.hw'):
+    DataBase = lex(file)
+    codeGenerate(DataBase)
+    generateTestBench(DataBase)
+else:
+    print(" Unknown file extension ")

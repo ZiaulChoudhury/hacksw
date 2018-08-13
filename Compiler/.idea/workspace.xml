@@ -18,8 +18,32 @@
       <file leaf-file-name="Lexer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lexer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6876">
-              <caret line="385" column="24" lean-forward="false" selection-start-line="385" selection-start-column="24" selection-end-line="385" selection-end-column="24" />
+            <state relative-caret-position="270">
+              <caret line="509" column="89" lean-forward="false" selection-start-line="509" selection-start-column="89" selection-end-line="509" selection-end-column="89" />
+              <folding>
+                <element signature="e#3538#7619#0" expanded="false" />
+                <element signature="e#7647#16241#0" expanded="false" />
+                <element signature="e#16260#20989#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HardwareTestBench.bsv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HardwareTestBench.bsv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testbench.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testbench.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -28,7 +52,7 @@
       <file leaf-file-name="Hardware.bsv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hardware.bsv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1316">
+            <state relative-caret-position="-76">
               <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
@@ -38,8 +62,8 @@
       <file leaf-file-name="expression.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-771">
-              <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            <state relative-caret-position="440">
+              <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -48,18 +72,8 @@
       <file leaf-file-name="sobel.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sobel.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
+            <state relative-caret-position="30">
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="USM.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/USM.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -68,7 +82,7 @@
       <file leaf-file-name="DAG.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DAG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
+            <state relative-caret-position="465">
               <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
               <folding />
             </state>
@@ -102,16 +116,17 @@
         <option value="$PROJECT_DIR$/Harris.txt" />
         <option value="$PROJECT_DIR$/USM" />
         <option value="$PROJECT_DIR$/Hardware.bsv" />
-        <option value="$PROJECT_DIR$/Lexer.py" />
         <option value="$PROJECT_DIR$/USM.txt" />
+        <option value="$PROJECT_DIR$/testbench.txt" />
+        <option value="$PROJECT_DIR$/Lexer.py" />
+        <option value="$PROJECT_DIR$/HardwareTestBench.bsv" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1857" />
-    <option name="height" value="1212" />
+    <option name="y" value="23" />
+    <option name="width" value="1366" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -128,8 +143,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -144,11 +157,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/hacksw/Compiler" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -317,13 +332,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1212" extended-state="6" />
+    <frame x="0" y="23" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12935324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13030747" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22407408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22321428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -339,26 +354,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20833333" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22470239" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12811127" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50446427" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -376,11 +371,6 @@
           <line>158</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Lexer.py</url>
-          <line>290</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -394,22 +384,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sobel.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lexer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DAG.bsv" />
     <entry file="file://$PROJECT_DIR$/expression.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -439,7 +413,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -463,7 +441,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -487,7 +469,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -519,7 +505,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -543,7 +533,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -567,7 +561,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -583,7 +581,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -607,7 +609,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -631,7 +637,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -655,7 +665,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -679,7 +693,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -695,7 +713,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -712,7 +734,7 @@
     <entry file="file://$PROJECT_DIR$/DAG.bsv" />
     <entry file="file://$PROJECT_DIR$/DAG.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
+        <state relative-caret-position="465">
           <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
           <folding />
         </state>
@@ -720,42 +742,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Hardware (Ziaul’s MacBook Air's conflicted copy 2018-08-12).bsv" />
     <entry file="file://$PROJECT_DIR$/Harris.txt" />
-    <entry file="file://$PROJECT_DIR$/expression.py">
+    <entry file="file://$PROJECT_DIR$/USM.hw" />
+    <entry file="file://$PROJECT_DIR$/sobel.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-771">
-          <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lexer.py">
+    <entry file="file://$PROJECT_DIR$/expression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6876">
-          <caret line="385" column="24" lean-forward="false" selection-start-line="385" selection-start-column="24" selection-end-line="385" selection-end-column="24" />
+        <state relative-caret-position="440">
+          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Hardware.bsv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1316">
+        <state relative-caret-position="-76">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sobel.txt">
+    <entry file="file://$PROJECT_DIR$/Lexer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="509" column="89" lean-forward="false" selection-start-line="509" selection-start-column="89" selection-end-line="509" selection-end-column="89" />
+          <folding>
+            <element signature="e#3538#7619#0" expanded="false" />
+            <element signature="e#7647#16241#0" expanded="false" />
+            <element signature="e#16260#20989#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testbench.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/USM.txt">
+    <entry file="file://$PROJECT_DIR$/HardwareTestBench.bsv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
