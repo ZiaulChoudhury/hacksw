@@ -1,3 +1,5 @@
+import sys
+
 from DAG import*
 from expression import *
 import re
@@ -69,13 +71,13 @@ class stage:
             inx = [symbolTable[parent].OutImg for parent in self.sources]
             self.InImg = min(inx)
             if(self.type == "Tile"):
-                self.OutImg = self.InImg - (int(self.parameters[1])-1)
+                self.OutImg = self.InImg - (int(self.parameters[2])-1)
             else:
                 self.OutImg = self.InImg
 
     def updateDelta(self):
         if(self.type == "Tile"):
-            self.delta = self.InImg*(int(self.parameters[1]) - 1 ) + ((int)(self.parameters[1]))
+            self.delta = self.InImg*(int(self.parameters[2]) - 1 ) + ((int)(self.parameters[2]))
         else:
             self.delta = 1;
 
@@ -237,8 +239,10 @@ def codeGenerate(DB):
                 SEND = Stage.OutImg * Stage.OutImg
                 RATE = Stage.parameters[-1]
 
-    f.write("#define RECV  " + str(RECV) + "\n")
-    f.write("#define SEND  " + str(SEND+1) + "\n")
+    #Rx = RECV/int(RATE)
+    #Sx = SEND/int(RATE)
+    f.write("#define RECV  " + str(int(RECV/int(RATE))) + "\n")
+    f.write("#define SEND  " + str(int(SEND/int(RATE))+1) + "\n")
     f.write("interface Stdin;\n\n")
 
     totalOut = DB.OUTPUTS * int(RATE) * 10
@@ -317,7 +321,7 @@ def codeGenerate(DB):
                 Comp = "Component _" + node + " <- " + "mkConvolver(" + "_"+Stage.sources[0] + " , " + str(Stage.inputId[Stage.sources[0]]) + " , "
                 Comp = Comp + str(Stage.parameters[1]) + ", "
                 if(Stage.numOutputs == 0):
-                    Comp = Comp + "1" + " , " + "buffer_"+node + " , "+ str(Stage.parameters[2]) + ");"
+                    Comp = Comp + "1" + " , " + "buffer_"+node + " , "+ str(Stage.parameters[-1]) + ");"
                 else:
                     Comp = Comp + str(Stage.numOutputs) + " , " + "buffer_" + node + " , " + str(Stage.parameters[-1]) + ");"
                 f.write(Comp + "\n")
@@ -527,7 +531,7 @@ def generateTestBench(DB):
                 SEND = Stage.OutImg * Stage.OutImg
                 RATE = Stage.parameters[-1]
 
-    Comp += "#define SEND " + str(SEND) + "\n"
+    Comp += "#define SEND " + str(int(SEND/int(RATE))) + "\n"
     Comp += "#define K " + str(RATE) + "\n\n\n"
 
     with open('testbench.txt', 'r') as myfile:
@@ -536,10 +540,11 @@ def generateTestBench(DB):
     f.write(Comp + "\n")
     return 0
 
+#file = 'gauss.hw'
 file = sys.argv[1]
 if file.endswith('.hw'):
     DataBase = lex(file)
     codeGenerate(DataBase)
     generateTestBench(DataBase)
 else:
-    print(" Unknown file extension ")
+    print (" Unknown file extension ")

@@ -1,0 +1,9 @@
+vec     <=     [0.06,0.12,0.06,0.12,0.25,0.12,0.06,0.12,0.06]<Constant,Vector>;
+img     <=     [1024,1024,0]<Image>;
+src     <=     [img,1]<Source>;
+tx      <=     [src,  3, 3, 1, 1,1]<Tile>;
+Ix      <=     [tx,3,vec,1]<Convolution>;
+tx1     <=     [Ix,  3, 3, 1, 1,1]<Tile>;
+Ix1     <=     [tx1,3,vec,1]<Convolution>;
+tx2     <=     [Ix1,  3, 3, 1, 1,1]<Tile>;
+Ix2     <=     [tx2,3,vec,1]<Convolution>;

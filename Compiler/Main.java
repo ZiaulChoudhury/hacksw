@@ -90,8 +90,8 @@ public class Main extends Canvas {
     public static void main(String[] args) {
         int row = Integer.parseInt(args[0]);
         int col = Integer.parseInt(args[1]);
-        int dim = (int)Math.sqrt(Integer.parseInt(args[2]));
         int rate = Integer.parseInt(args[3]);
+        int dim = (int)Math.sqrt(Integer.parseInt(args[2])*rate);
         JFrame frame = new JFrame();
         Main m = new Main(0,row,col,dim,rate);
         frame.setSize((m.WIDTH+10), (m.HEIGHT+10));
